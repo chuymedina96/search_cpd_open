@@ -27,7 +27,7 @@ source <YOUR_VIRTUAL_ENV>/bin/activate
 call <YOUR_VIRTUAL_ENV>/Scripts/activate  
 ```
 
-- If you are unfamiliar with virtual environments, check out this awesome tutorial from Corey Shafer: https://www.youtube.com/watch?v=N5vscPTWKOk
+- If you are unfamiliar with virtual environments, check out this awesome tutorial from Corey Schafer: https://www.youtube.com/watch?v=N5vscPTWKOk
 
 3. Once you get your virtual environment activated, you can install all necessary software dependencies by running:
 ```bash
