@@ -1,0 +1,188 @@
+header {
+    position: relative;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+  
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+  
+header .container {
+    position: relative;
+    z-index: 2;
+    
+}
+  
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    z-index: 1;
+    background: rgb(36,0,0);
+    background: linear-gradient(180deg, rgba(36,0,0,1) 0%, rgba(116,7,7,1) 71%, rgba(207,12,12,1) 100%); 
+}
+/*search box css start here*/
+/* .search-sec{
+
+} */
+.search-slt{
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+.wrn-btn{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+     height: calc(3rem + 2px) !important;
+     border-radius:0;
+}
+.engine-pos{
+    margin-top: -110px;
+}
+img{
+    height: 200px;
+    width: 200px;
+    
+}
+.officer-id{
+    border: 2px grey solid;
+    background-color: red;
+    color: white;
+}
+.officer-info{
+    margin: 0 auto;
+    text-align: center;
+}
+.typewrite{
+    font-size: 22px;
+}
+.top-margin{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: Verdana;
+    font-size: 25px;
+}
+.value-box{
+    padding:10px;
+    background-color: white;
+    color:black;
+    font-family: Verdana;
+    border: 2px solid #f2000d;
+}
+.position-view{
+    margin-top:15px;
+}
+#navbar-image{
+    width: 120px;
+    height:50px;
+}
+/* Mobile */
+@media (pointer: coarse) and (hover: none) {
+    header {
+        background: url('../media/black.mp4') black no-repeat center center scroll;
+    }
+    header video {
+        display: none;
+    }
+}
+
+.h7 {
+    font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+    margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+@media (max-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+@media (max-width: 500px){
+
+    .top-margin{
+        font-size: 18px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+}
+@media (max-width: 320px){
+    .position-view{
+        margin-top:35px;
+    }
+    .top-margin{
+        font-size: 15px;
+    }
+    
+    
+}
+@media (max-width: 360px){
+    .position-view{
+        margin-top:35px;
+    }
+    .top-margin{
+        font-size: 16px;
+    }
+    
+    
+}
+
+/**Reset Bootstrap*/
+/* .dropdown-toggle::after {
+    content: none;
+    display: none;
+} */
+
+.card-link{
+    color: red;
+}
+.card-title{
+    color: red;
+}
+#card-body{
+    border: 2px solid red;
+}
+.input-group{
+    margin-bottom: 10px;
+}

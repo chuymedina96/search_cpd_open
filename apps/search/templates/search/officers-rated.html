@@ -1,0 +1,61 @@
+{% extends 'search/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167439088-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167439088-1');
+</script>
+
+</head>
+<header>
+   <div class="overlay"></div>
+   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="{% static 'search/media/black.mp4' %}" type="video/mp4">
+   </video>
+   <div class="container h-100">
+      <div class="d-flex h-100 text-center align-items-center">
+         <div class="w-100 text-white engine-pos">
+            <h1 class="text-center">View Rated Officers so far below</h1>
+            <a href="#card-body"><button class="btn btn-danger">View rated</button></a>
+         </div>
+      </div>
+   </div>
+</header>
+<div class="container">
+   {% for officer in officers %}
+      {% if officer.reviews.all %}
+         <div class="card gedf-card">
+            <div class="card-body" id="card-body">
+               <div class="container">
+                  <h5 class="card-title">Name: {{officer.firstName}} {{officer.lastName}}</h5>
+                  <h5 class="card-title">ID: {{officer.id}}</h5>
+                  <h5 class="card-title">Badge Number: {{officer.badge}}</h5>
+                  <h5 class="card-title">CPD unit: {{officer.unit}}</h5>
+                  <a href="/officers/{{officer.id}}"><button class="btn btn-danger">View</button></a>
+                  {% comment %} <p class="card-text">Rating: {{review.rating}}</p> {% endcomment %}
+                  <br>
+               </div>
+            </div>
+         </div>
+      {% endif %}
+   {% endfor %}
+</div>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+{% endblock content %}
+

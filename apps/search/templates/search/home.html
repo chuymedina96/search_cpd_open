@@ -1,0 +1,94 @@
+{% extends 'search/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167439088-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167439088-1');
+</script>
+
+</head>
+<header>
+   <div class="overlay"></div>
+   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="{% static 'search/media/black.mp4' %}" type="video/mp4">
+   </video>
+   <div class="container h-100">
+      {% if messages %}
+         {% for message in messages %}
+               <div class="alert alert-danger alert-dismissible animated bounce" role="alert">
+                  {{message}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+         {% endfor %}
+      {% endif %}
+      <div class="d-flex h-100 text-center align-items-center">
+         <div class="w-100 text-white engine-pos">
+            <h1 class="text-center">SearchCPD</h1>
+            <h4 class="title">
+               <p href="" class="typewrite" data-period="3000"
+                  data-type='[ "Hold Police Officers Accountable", "Search for any CPD officer by badge number", "Post true anonymous complaints", "Algorithmically address police brutality", "Create preventative measures", "Let us create a better Chicago" ]'>
+               </p>
+               <span class="wrap"></span>
+            </h4>
+            <div class="container">
+               <section class="search-sec">
+                  <form action="searchresult" method="POST" novalidate="novalidate">
+                     {% csrf_token %}
+                     <div class="row">
+                        <div class="col-lg-12">
+                           <div class="row">
+                              <div class="col-lg-9 col-md-9 col-sm-12 p-0">
+                                 <input type="text" class="form-control search-slt" name ="q" placeholder="Enter CPD Officer Badge Number">
+                              </div>
+                              <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                 <button type="submit" class="btn btn-danger wrn-btn">Search</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </section>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+{% include './components/modals.html'%}
+<script>
+setTimeout(function () {
+   $('#exampleModalCenter').modal('show');
+}, 10000);
+</script>
+
+
+{% comment %} <table class="table table-hover table-dark">
+   <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Badge</th>
+      <th>Unit</th>
+      <th>Rank</th>
+      <th>View Officer Record</th>
+
+   </tr>
+   {% for officer in officers %}
+      <tr class="Success">
+            <td>{{officer.id}}</td>
+            <td>{{officer.firstName}} {{officer.lastName}}</td>
+            <td>{{officer.badge}}</td>
+            <td>{{officer.unit}}</td>
+            <td>{{officer.rank}}</td>
+            <td><a href="/officers/{{officer.id}}">View</a></td>
+      </tr>
+   {% endfor %}
+</table> {% endcomment %}
+{% endblock content %}
+

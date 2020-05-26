@@ -1,0 +1,33 @@
+{% extends 'search/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167439088-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167439088-1');
+</script>
+
+</head>
+<header>
+   <div class="overlay"></div>
+   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="{% static 'search/media/black.mp4' %}" type="video/mp4">
+   </video>
+   <div class="container h-100">
+      <div class="d-flex h-100 text-center align-items-center">
+         <div class="w-100 text-white engine-pos">
+            <h1 class="text-center">About SearchCPD</h1>
+            <div class="container">
+               <p>SearchCPD is a grassroots initiative and technological tool to hold our public servants accountable for wrong doing. The goal for this project is to gather enough data so we can run custom search algorithms and pin-point potential officers who may abuse their power down the road so that we can put an immediate hault before it leads to tragedy. We seek to end police brutality through the transformative power of computer programming, data science, artificial intelligence, and our network of supporters and partnerships with other organizations that are already doing work around police brutality. Are you interested in adopting the same kind of tool in your city? Contact us and we can help you!</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+{% endblock content %}
+
