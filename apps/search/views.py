@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.http import JsonResponse
 
 import stripe
-stripe.api_key = "YOUR_STRIPE_KEY"
+stripe.api_key = "STRIPE_KEY"
 
 
 # Create your views here.
@@ -79,7 +79,7 @@ def successMsg(request, args):
 
 
 def populate(request):
-    with open('/Users/chuy/Documents/projects/python/django/cpd_search_app/pd_searchv3/apps/search/cpd.csv', 'r') as csvfile:
+    with open('/Users/chuy/Desktop/projects/python/django/searchcpd_back_up/search_cpd_open/apps/search/cpd.csv', 'r') as csvfile:
 
         cop_data = csv.DictReader(csvfile) 
         
