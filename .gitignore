@@ -15,6 +15,8 @@ media
 migrations
 pd_env
 keys.json
+all_chicago_employees.csv
+cpd.csv
 
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
