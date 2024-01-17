@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.http import JsonResponse
 
 import stripe
-stripe.api_key = "YOUR_STRIPE_KEY"
+stripe.api_key = "STRIPE_KEY"
 
 
 # Create your views here.
