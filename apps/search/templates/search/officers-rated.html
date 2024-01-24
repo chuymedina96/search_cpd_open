@@ -1,18 +1,6 @@
 {% extends 'search/base.html' %}
 {% load static %}
 {% block content %}
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167439088-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-167439088-1');
-</script>
-
-</head>
 <header>
    <div class="overlay"></div>
    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -28,17 +16,17 @@
    </div>
 </header>
 <div class="container">
-   {% for officer in officers %}
-      {% if officer.reviews.all %}
+   {% for review in reviews %}
+      {% if review.officer %}
          <div class="card gedf-card">
             <div class="card-body" id="card-body">
                <div class="container">
-                  <h5 class="card-title">Name: {{officer.firstName}} {{officer.lastName}}</h5>
-                  <h5 class="card-title">ID: {{officer.id}}</h5>
-                  <h5 class="card-title">Badge Number: {{officer.badge}}</h5>
-                  <h5 class="card-title">CPD unit: {{officer.unit}}</h5>
-                  <a href="/officers/{{officer.id}}"><button class="btn btn-danger">View</button></a>
-                  {% comment %} <p class="card-text">Rating: {{review.rating}}</p> {% endcomment %}
+                  <h5 class="card-title">Officer Name: {{review.officer.firstName}} {{review.officer.lastName}}</h5>
+                  <h5 class="card-title">Badge Number: {{review.officer.badge}}</h5>
+                  <h5 class="card-title">Review Number: {{review.id}}</h5>
+                  <h5 class="card-title">CPD unit: {{review.officer.unit}}</h5>
+                  <a href="/officers/{{review.officer.id}}"><button class="btn btn-danger">View</button></a>
+                  <p class="card-text">Rating: {{review.rating}}</p>
                   <br>
                </div>
             </div>

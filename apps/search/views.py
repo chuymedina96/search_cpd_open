@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.http import JsonResponse
 
 import stripe
-stripe.api_key = "STRIPE_KEY"
+stripe.api_key = os.environ.get("STRIPE_API_KEY")
 
 
 # Create your views here.
@@ -25,21 +25,26 @@ def home(request):
 def about(request):
     return render(request, "search/about.html", {"title": "About"})
 
-
 def rated(request):
 
     # rated_officers  = []
-    # officers        = Officer.objects.all()
 
-    # for officer in officers:
-    #     if officer.reviews.all:
-    #         rated_officers.append(officer)
+    # officer=[]
+
+    # for review in Review.objects.all():
+    #     if review.officer == True:
+    #         rated_officers.append(review.officer.id)
+
+    # for officer in rated_officers:
+    #     if officer
+        
 
     # reviews     = Review.objects.all()
 
     context={
         'officers': Officer.objects.all(),
         'reviews': Review.objects.all()[:5],
+        # 'reviews': Review.objects.all()[:5],
         'title': "Officers Rated"
         
 
@@ -79,7 +84,7 @@ def successMsg(request, args):
 
 
 def populate(request):
-    with open('/Users/chuy/Desktop/projects/python/django/searchcpd_back_up/search_cpd_open/apps/search/cpd.csv', 'r') as csvfile:
+    with open("./cpd.csv", 'r') as csvfile:
 
         cop_data = csv.DictReader(csvfile) 
         

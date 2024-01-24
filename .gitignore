@@ -8,7 +8,6 @@
 *.pyc
 __pycache__/
 local_settings.py
-settings.py
 db.sqlite3
 db.sqlite3-journal
 media
@@ -16,7 +15,6 @@ migrations
 pd_env
 keys.json
 all_chicago_employees.csv
-cpd.csv
 
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
