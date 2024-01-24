@@ -84,7 +84,7 @@ def successMsg(request, args):
 
 
 def populate(request):
-    with open("./cpd.csv", 'r') as csvfile:
+    with open("/app/apps/search/cpd.csv", 'r') as csvfile:
 
         cop_data = csv.DictReader(csvfile) 
         
