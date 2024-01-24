@@ -12,8 +12,6 @@ db.sqlite3
 db.sqlite3-journal
 migrations
 pd_env
-keys.json
-all_chicago_employees.csv
 
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
