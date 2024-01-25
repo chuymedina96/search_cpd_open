@@ -12,15 +12,8 @@ import stripe
 stripe.api_key = os.environ.get("STRIPE_API_KEY")
 
 
-# Create your views here.
 def home(request):
-
-    context={
-        "officers": Officer.objects.all(),
-        "title": "Home"
-    }
-    return render(request, "search/home.html", context)
-
+    return render(request, "search/home.html")
 
 def about(request):
     return render(request, "search/about.html", {"title": "About"})
