@@ -7,7 +7,7 @@ urlpatterns = [
     path('officers/<int:officer_id>/', views.viewOfficer),
     path('postreview/', views.postreview),
     path('searchresult', views.searchresult),
-    path('populate', views.populate),
+    # path('populate', views.populate),
     path('rated', views.rated, name="rated"),
     path('donate', views.donations_page, name="donate"),
     path('charge/', views.charge, name="charge"),

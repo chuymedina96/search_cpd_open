@@ -1,8 +1,6 @@
 from django.db import models
 # from PIL import Image
 
-# Create your models here.
-
 class Officer(models.Model):
     firstName   = models.CharField(max_length=255)
     lastName    = models.CharField(max_length=255)
@@ -41,8 +39,10 @@ class Review(models.Model):
 
 class Comment(models.Model):
     text        = models.TextField()
-    review      = models.ForeignKey(Review, related_name='comments', on_delete=models.PROTECT) # add review attribute to class
+    # add review attribute to class
+    review      = models.ForeignKey(Review, related_name='comments', on_delete=models.PROTECT) 
     created_at  = models.DateTimeField(auto_now_add=True)
     updated_at  = models.DateTimeField(auto_now=True)
+    
     def __repr__(self):
         return f"Comment: {self.id}, Review Parent: {self.review.id}"
