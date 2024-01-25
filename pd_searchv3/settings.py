@@ -140,3 +140,4 @@ django_heroku.settings(locals())
 
 # Next steps:
     #   Add tests to automate testing new features so we know that they will work in prod and dev.
+    #   Switch to prod env. Create prod postgres, config env variables for prod. Merge dev branch into master.
