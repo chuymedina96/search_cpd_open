@@ -127,10 +127,19 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL= None
 
+# STORAGES = {
+#     "default": {
+#         "BACKEND": "storages.backends.s3.S3Storage"
+#     },
+# }
+
+# STATICFILES_STORAGE = "storages.backends.s3.S3Storage"
+
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 MEDIA_URL='/media/'
@@ -140,3 +149,4 @@ django_heroku.settings(locals())
 
 # Next steps:
     #   Add tests to automate testing new features so we know that they will work in prod and dev.
+    #   Switch to prod env. Create prod postgres, config env variables for prod. Merge dev branch into master.

@@ -53,14 +53,13 @@
                     <div class="form-group">
                         <form action ="/postreview/" method="POST" enctype="multipart/form-data" id="post-message">
                             {% csrf_token %}
-                            <h5>Title of your review</h5>
-                             <input type="text" class="form-control search-slt" name ="title" placeholder="Title your post"><br>
+                            <input type="text" class="form-control search-slt" name ="title" placeholder="Title your review"><br>
                             <label class="sr-only" for="message">post</label>
                             <input type="hidden" name="cop" value="{{officer.id}}" />
                             <textarea class="form-control" name="message" id="message" rows="3" placeholder="How did your interaction with this officer go?"></textarea><br>
-                            <h5>Please rate this officer's overall behavior during your encounter.(1 being worse. 10 being best)</h5>
+                            <h4>Rate your interaction with this officer</h4><br>
                             <select class="form-control" id="select" name="rating">
-                                <option value="1">1</option>
+                                <option value="1">1(Very bad)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -69,9 +68,9 @@
                                 <option value="7">7</option>
                                 <option value="8">8</option>
                                 <option value="9">9</option>
-                                <option value="10">10</option>
+                                <option value="10">10(Very good)</option>
                             </select><br>
-                            <p>Optional:</p>
+                            {% comment %} <p>Optional:</p>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
@@ -89,7 +88,7 @@
                                     <input type="file" class="custom-file-input" id="customFile" name="video">
                                     <label class="custom-file-label" for="customFile">Upload a Video</label>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                             <div class="btn-group">
                                 <button type="submit" class="btn btn-danger">share</button>
                             </div>
