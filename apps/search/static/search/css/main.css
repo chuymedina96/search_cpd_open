@@ -45,7 +45,7 @@ header .overlay {
 .search-slt{
     display: block;
     width: 100%;
-    font-size: 0.875rem;
+    font-size: 15px;
     line-height: 1.5;
     color: #55595c;
     background-color: #fff;
@@ -186,3 +186,4 @@ img{
 .input-group{
     margin-bottom: 10px;
 }
+
