@@ -129,7 +129,7 @@ AWS_DEFAULT_ACL= None
 
 STORAGES = {
     "default": {
-        "BACKEND": "storages.backends.s3.S3Storage"
+        "BACKEND": "django.core.files.storage.FileSystemStorage"
     },
 }
 
