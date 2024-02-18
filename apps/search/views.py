@@ -18,6 +18,9 @@ def home(request):
 def about(request):
     return render(request, "search/about.html", {"title": "About"})
 
+def contact(request):
+    return render(request, "search/contact.html", {"title": "Contact us"})
+
 def rated(request):
 
     # rated_officers  = []

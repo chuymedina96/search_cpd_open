@@ -9,8 +9,8 @@
    <div class="container h-100">
       <div class="d-flex h-100 text-center align-items-center">
          <div class="w-100 text-white engine-pos">
-            <h1 class="text-center">View Rated Officers so far below</h1>
-            <a href="#card-body"><button class="btn btn-danger">View rated</button></a>
+            <h1 class="text-center">View Rated Officers Below</h1><br>
+            <a href="#card-body"><button class="btn btn-danger">Scroll Down</button></a>
          </div>
       </div>
    </div>
@@ -25,8 +25,8 @@
                   <h5 class="card-title">Badge Number: {{review.officer.badge}}</h5>
                   <h5 class="card-title">Review Number: {{review.id}}</h5>
                   <h5 class="card-title">CPD unit: {{review.officer.unit}}</h5>
-                  <a href="/officers/{{review.officer.id}}"><button class="btn btn-danger">View</button></a>
-                  <p class="card-text">Rating: {{review.rating}}</p>
+                  <h5 class="card-title">Review Rating: {{review.rating}}</h5>
+                  <a href="/officers/{{review.officer.id}}"><button class="btn btn-danger">View Officer Profile</button></a>
                   <br>
                </div>
             </div>

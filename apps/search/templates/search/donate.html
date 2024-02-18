@@ -1,19 +1,6 @@
 {% extends 'search/donate_template.html' %}
 {% load static %}
 {% block content %}
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167439088-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-167439088-1');
-</script>
-
-
-</head>
 <header>
    <style type="text/css">
 		/**
@@ -49,7 +36,7 @@
 		}
 		.back-button{
 			padding: 20px;
-			background-color: red;
+			background-color: #fa755a;
 			color: #fff;
 			font-size: 18px;
 			border: none;
@@ -57,19 +44,27 @@
 		.back-button:hover{
 			cursor: pointer;
 		}
+		.stripe-link{
+			color: yellow;
+		}
 	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://js.stripe.com/v3/"></script>
-
+	
 	<div id="container">
 		<div class="column-6">
-			<a href="{%url 'root'%}"><button class="back-button">< Back to home page</button></a>
+			
+			<a href="{% url 'root' %}"><input class="myButton" style="background-color:#10a195" type="submit" value="Back To Home Page" name=""></a>
 			<div id="left-wrapper">
 				<img id="profile-pic" src="{% static 'search/media/searchcpd_pic.jpg' %}">
 				<div id="left-wrapper-header">
-					<h3>Help fund the cause?</h3>
+					<h3>Help fund this project?</h3>
 					<h5>One Time Donation</h5>
 				</div>
-				<div style="clear:left"></div>
+				<div style="clear:left"><br>
+					<p>We use Stripe to process payments.</p>
+					<p>Learn more about secure Stripe Payments <a class="stripe-link" target=”_blank” href="https://synder.com/blog/stripe-secure-payment-method/#:~:text=Stripe%20is%20certified%20as%20a,%2C%20Mastercard%2C%20and%20American%20Express.">here</a></p>
+				</div>
 				<hr>
 				<!-- Add form here -->
 				<form action="{% url 'charge' %}" method="post" id="payment-form">
@@ -79,11 +74,12 @@
 						<br>
 						<br>
 						<select required name="amount" id="amount">
-						  <option selected value="5">$5 --- Let me help with server costs</option>
-						  <option value="10">$10 --- You helped me, so I am going to help you</option>
-						  <option value="25">$25 --- I love your app!</option>
-                          <option value="50">$50 --- Let me help you with server storage!</option>
-                          <option value="100">$100 --- I want to see this grow!</option>
+						  <option selected value="5">$5 --- Let me buy you a coffee for your labor!</option>
+						  <option value="10">$10 --- Let me help with server costs.</option>
+						  <option value="25">$25 --- I love this idea!</option>
+                          <option value="50">$50 --- In case you need to scale up!</option>
+                          <option value="100">$100 --- I am directly investing in this technology!</option>
+						  <option value="1000">$500 --- I want this to GROW!!!</option>
 						</select>
 					</div>
 
@@ -120,10 +116,11 @@
 
 		
 	</div>
+	
 
 	<script>
 		// Create a Stripe client.
-		var stripe = Stripe('YOUR_STRIPE_KEY');
+		var stripe = Stripe('');
 
 		// Create an instance of Elements.
 		var elements = stripe.elements();
