@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.http import JsonResponse
 
 import stripe
-stripe.api_key = os.environ.get("STRIPE_API_KEY")
+stripe.api_key = os.environ.get("STRIPE_API_SECRET_KEY")
 
 
 def home(request):
@@ -17,6 +17,9 @@ def home(request):
 
 def about(request):
     return render(request, "search/about.html", {"title": "About"})
+
+def contact(request):
+    return render(request, "search/contact.html", {"title": "Contact us"})
 
 def rated(request):
 

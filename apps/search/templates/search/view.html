@@ -24,7 +24,7 @@
                     <!-- Officer Profile Section -->
                     <section class="search-sec">
                         <img src="{% static 'search/media/placeholder.jpg' %}">
-                        <h3 class="top-margin"><span class="value-box">Avg Rating: {{avgRating}} out of 10</span></h3>
+                        <h3 class="top-margin"><span class="value-box">Average Rating: {{avgRating}} out of 10</span></h3>
                         <h3 class="top-margin"><span class="value-box">Name: {{officer.firstName}} {{officer.lastName}}</span></h3>
                         <h3 class="top-margin"><span class="value-box">Rank: {{officer.rank}}</span></h3>
                         <h3 class="top-margin"><span class="value-box">Badge#: {{officer.badge}}</span></h3>
@@ -90,7 +90,7 @@
                                 </div>
                             </div> {% endcomment %}
                             <div class="btn-group">
-                                <button type="submit" class="btn btn-danger">share</button>
+                                <button type="submit" class="btn btn-danger">Publish</button>
                             </div>
                         </form><br>
                     </div>
@@ -143,11 +143,4 @@
         </div>
     {% endfor %}
 </div>
-{% include './components/modals.html'%}
-<script>
-setTimeout(function () {
-   $('#exampleModalCenter2').modal('show');
-}, 3000);
-</script>
-
-{% endblock content%}
+{% endblock content %}
